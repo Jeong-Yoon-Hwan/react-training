@@ -1,0 +1,13 @@
+.root {
+  width: 100%;
+  height: max-content;
+  padding: 10px;
+  background-color: #ffba00;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.root :hover {
+  color: red;
+}

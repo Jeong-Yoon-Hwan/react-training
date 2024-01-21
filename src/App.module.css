@@ -1,0 +1,18 @@
+.root {
+  width: 100vw; /* 화면 너비를 100%로 설정 */
+  height: 100vh; /* 화면 높이를 100%로 설정 */
+  background-color: #f0f0f0; /* 배경 색상을 설정 (선택 사항) */
+  display: flex; /* 자식 요소를 가로로 정렬하기 위해 Flex 레이아웃 사용 (선택 사항) */
+  flex-direction: column; /* 자식 요소를 세로로 정렬하기 위해 Flex 레이아웃 사용 (선택 사항) */
+  justify-content: start; /* 자식 요소를 수직 중앙으로 정렬 (선택 사항) */
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  height: max-content;
+  background-color: #ffba00;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
