@@ -8,14 +8,27 @@ export const AnimationPage = () => {
     setToggle(!toggle);
     console.log(!toggle);
   };
+
+  const [scaleToggle, setScaleToggle] = useState(false);
+  const handleScaleToggle = () => {
+    setScaleToggle(!scaleToggle);
+  };
   return (
     <div className={styles.root}>
-      <button onClick={toggleVisibility}>토글</button>
-      {toggle ? (
-        <div key="true" className={`${styles["true"]} ${styles["fade-in"]}`}></div>
-      ) : (
-        <div key="false" className={`${styles["false"]} ${styles["fade-in"]}`}></div>
-      )}
+      <div>
+        <button onClick={toggleVisibility}>토글</button>
+        {toggle ? (
+          <div key="true" className={`${styles["true"]} ${styles["fade-in"]}`}></div>
+        ) : (
+          <div key="false" className={`${styles["false"]} ${styles["fade-in"]}`}></div>
+        )}
+      </div>
+      <div>
+        <button onClick={handleScaleToggle} style={{ marginRight: "100px" }}>
+          버튼
+        </button>
+        <div className={scaleToggle ? styles.scale : styles.scaleup}></div>
+      </div>
     </div>
   );
 };

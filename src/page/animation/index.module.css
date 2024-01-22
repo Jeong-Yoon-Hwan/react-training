@@ -6,6 +6,15 @@
   height: 100%;
 }
 
+.root > div {
+  width: calc(100% / 2);
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .true {
   width: 100px;
   height: 100px;
@@ -32,6 +41,19 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.scale {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  transform: scale(10);
+  transition: transform 0.3s ease-in-out;
+}
+.scaleup {
+  width: 100px;
+  height: 100px;
+  background-color: red;
 }
 
 .expanding {
