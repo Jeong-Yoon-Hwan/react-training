@@ -8,6 +8,9 @@ export const HomePage = () => {
         <li>
           <Link to="/animation">애니메이션</Link>
         </li>
+        <li>
+          <Link to="/chart">차트 </Link>
+        </li>
       </ul>
     </div>
   );

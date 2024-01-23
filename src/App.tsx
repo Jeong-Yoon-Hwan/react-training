@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-route
 import { AnimationPage } from "./page/animation";
 import { HomePage } from "./page/home";
 import { Header } from "./components/header";
+import ChartPage from "./page/chart";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/animation" element={<AnimationPage />} />
+          <Route path="/chart" element={<ChartPage />} />
         </Routes>
       </Router>
     </div>
