@@ -24,10 +24,7 @@ export const AnimationPage = () => {
         )}
       </div>
       <div>
-        <button onClick={handleScaleToggle} style={{ marginRight: "100px" }}>
-          버튼
-        </button>
-        <div className={scaleToggle ? styles.scale : styles.scaleup}></div>
+        <div className={scaleToggle ? styles.scale : styles.scaleup} onClick={handleScaleToggle}></div>
       </div>
     </div>
   );
