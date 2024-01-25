@@ -11,6 +11,9 @@ export const HomePage = () => {
         <li>
           <Link to="/chart">차트 </Link>
         </li>
+        <li>
+          <Link to="/drag">드래그 </Link>
+        </li>
       </ul>
     </div>
   );
