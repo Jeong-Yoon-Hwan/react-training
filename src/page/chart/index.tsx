@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import styles from "./index.module.css";
 
 const initialData = [1, 2, 3, 4, 5, 4, 3]; // 초기 데이터
 
@@ -15,7 +16,7 @@ const ChartPage = () => {
       const newDataSeries = [...dataSeries.slice(1), newDataPoint];
       // 상태 업데이트
       setDataSeries(newDataSeries);
-    }, 300);
+    }, 5000);
 
     // 컴포넌트가 언마운트될 때 인터벌 클리어
     return () => clearInterval(interval);
@@ -24,7 +25,7 @@ const ChartPage = () => {
   const options = {
     chart: {
       type: "areaspline",
-      height: 100,
+      height: 400,
       backgroundColor: "#06060C",
       opacity: 0.75,
     },
@@ -50,7 +51,11 @@ const ChartPage = () => {
     },
   };
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />;
+  return (
+    <div className={styles.root}>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
+  );
 };
 
 export default ChartPage;
