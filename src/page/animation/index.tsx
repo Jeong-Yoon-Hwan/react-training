@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./index.module.css";
 
 export const AnimationPage = () => {
@@ -13,6 +13,23 @@ export const AnimationPage = () => {
   const handleScaleToggle = () => {
     setScaleToggle(!scaleToggle);
   };
+
+  const container = useRef<HTMLDivElement | null>(null);
+  const [containerToggle, setContainerToggle] = useState<boolean>(false);
+
+  const moveContainer = () => {
+    console.log("ok");
+
+    if (container.current && containerToggle) {
+      container.current.style.scale = "1.5";
+      container.current.style.transition = "1s";
+      setContainerToggle(!containerToggle);
+    } else if (container.current && !containerToggle) {
+      container.current.style.scale = "1";
+      container.current.style.transition = "1s";
+      setContainerToggle(!containerToggle);
+    }
+  };
   return (
     <div className={styles.root}>
       <div>
@@ -25,6 +42,14 @@ export const AnimationPage = () => {
       </div>
       <div>
         <div className={scaleToggle ? styles.scale : styles.scaleup} onClick={handleScaleToggle}></div>
+      </div>
+
+      <div className={styles.sizeupAnimation}>
+        <div
+          ref={container}
+          onClick={moveContainer}
+          style={{ width: "100px", height: "100px", backgroundColor: "red" }}
+        ></div>
       </div>
     </div>
   );
